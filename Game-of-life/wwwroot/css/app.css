@@ -58,14 +58,28 @@ table {
 }
 
 .cell {
-    /* Default cell style 
-    width: 1px;
-    height: 1px;*/
-    border-radius: 5px;
+    /* Default cell style */
+    width: 5px;
+    height: 5px;
+    margin: 0px;
+    padding: 1px;
+    border-radius: 10px;
+    transition: background-color 0.1s ease-in-out;
+    transition: transform 0.5s ease-in-out;
+}
+
+.cell:hover {
+    background-color: darkslateblue;
+    transform: scale(2);
+    
+}
+
+.cell:active {
+    background-color: darkslategrey;
 }
 
 .alive {
-    background-color: black; /* Style for alive cells */
+    background-color: darkslategrey; /* Style for alive cells */
 }
 
 .dead {

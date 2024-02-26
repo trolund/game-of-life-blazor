@@ -2,18 +2,28 @@
 @using System.Timers
 
 @code {
-    private int _rows = 150;
-    private int _cols = 200;
+    private int _rows = 75;
+    private int _cols = 160;
     private int[][] _board;
     private int _currentCount = 0;
-    private Timer _timer = new(200);
+    private Timer _timer = new(10);
+    private Double _randomFactor = 0.5;
 
     protected override void OnInitialized()
     {
-        _board = CreateBoard();
-        
+        Reset();
         _timer.Elapsed += (sender, eventArgs) => OnTimerCallback();
-        _timer.Start();
+    }
+
+    private void Reset()
+    {
+        _board = CreateBoard();
+    }
+
+    private void BringToLife(int i, int j)
+    {
+        _board[i][j] = 1;
+        StateHasChanged();
     }
 
     private void OnTimerCallback()
@@ -26,6 +36,38 @@
         });
     }
 
+    private void Start()
+    {
+        if (_timer.Enabled)
+        {
+            _timer.Stop();
+        }
+        else
+        {
+            _timer.Start();
+        }
+    }
+
+    private int[][] CreateRandomeBoard()
+    {
+        var newBoard = new int[_rows][];
+        var rand = new Random();
+        for (int i = 0; i < _rows; i++)
+        {
+            newBoard[i] = new int[_cols];
+            for (int j = 0; j < _cols; j++)
+            {
+                newBoard[i][j] = rand.NextDouble() > _randomFactor ? 0 : 1;
+            }
+        }
+        return newBoard;
+    }
+
+    private void RandomBoard()
+    {
+        _board = CreateRandomeBoard();
+    }
+
     private int[][] CreateBoard()
     {
         var newBoard = new int[_rows][];
@@ -35,17 +77,11 @@
             newBoard[i] = new int[_cols];
             for (int j = 0; j < _cols; j++)
             {
-                newBoard[i][j] = rand.NextDouble() > 0.6 ? 1 : 0;
+                // newBoard[i][j] = rand.NextDouble() > 0.6 ? 1 : 0;
+                newBoard[i][j] = 0;
             }
         }
         return newBoard;
-    }
-
-    void SetBoardSize(int newRows, int newCols)
-    {
-        _rows = newRows;
-        _cols = newCols;
-        _board = CreateBoard();
     }
 
     private int CountNeighbors(int[][] board, int row, int col)
@@ -94,16 +130,19 @@
 <div class="center">
    <h1>Game of life</h1>
    <p>Iterations @(_currentCount)</p> 
+   <button @onclick="Start">@(_timer.Enabled ? "Stop" : "Start")</button>
+   <input name="random_factor" value="@(_randomFactor)" @onchange="(v) => { _randomFactor = double.Parse((string) v.Value); }"/>
+   <button @onclick="RandomBoard">Random world</button>
+   <button @onclick="Reset">Reset</button>
 </div>
 <table class="table">
-    @foreach (var row in _board)
+    @foreach (var row in _board.Select((x,i) => new {Value = x, Index = i}))
     {
         <tr>
-            @foreach (var cell in row)
+            @foreach (var cell in row.Value.Select((x,i) => new {Value = x, Index = i}))
             {
-                <td class="cell @(cell == 1 ? "alive" : "dead")"></td>
+                <td @onclick="() => BringToLife(row.Index, cell.Index)" class="cell @(cell.Value == 1 ? "alive" : "dead")"></td>
             }
         </tr>
     }
 </table>
-
