@@ -141,7 +141,7 @@
         <tr>
             @foreach (var cell in row.Value.Select((x,i) => new {Value = x, Index = i}))
             {
-                <td @onactivate="" @onclick="() => BringToLife(row.Index, cell.Index)" class="cell @(cell.Value == 1 ? "alive" : "dead")"></td>
+                <td @onclick="() => BringToLife(row.Index, cell.Index)" class="cell @(cell.Value == 1 ? "alive" : "dead")"></td>
             }
         </tr>
     }
