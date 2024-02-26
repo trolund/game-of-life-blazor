@@ -14,11 +14,7 @@ table {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: 250px;
-    color: #b32121;
-    position: fixed;
-    top: 0;
-    
+    width: 100vw;
 }
 
 /* ---- Blazor forms and validation ---- */
@@ -62,9 +58,9 @@ table {
 }
 
 .cell {
-    /* Default cell style */
-    width: 2px;
-    height: 2px;
+    /* Default cell style 
+    width: 1px;
+    height: 1px;*/
 }
 
 .alive {
