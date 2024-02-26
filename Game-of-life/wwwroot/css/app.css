@@ -61,6 +61,7 @@ table {
     /* Default cell style 
     width: 1px;
     height: 1px;*/
+    border-radius: 5px;
 }
 
 .alive {
