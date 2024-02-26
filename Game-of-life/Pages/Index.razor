@@ -1,0 +1,109 @@
+﻿@page "/"
+@using System.Timers
+
+@code {
+    private int _rows = 150;
+    private int _cols = 200;
+    private int[][] _board;
+    private int _currentCount = 0;
+    private Timer _timer = new(100);
+
+    protected override void OnInitialized()
+    {
+        _board = CreateBoard();
+        
+        _timer.Elapsed += (sender, eventArgs) => OnTimerCallback();
+        _timer.Start();
+    }
+
+    private void OnTimerCallback()
+    {
+        _ = InvokeAsync(() =>
+        {
+            _currentCount++;
+            _board = GetNextGeneration(_board);
+            StateHasChanged();
+        });
+    }
+
+    private int[][] CreateBoard()
+    {
+        var newBoard = new int[_rows][];
+        var rand = new Random();
+        for (int i = 0; i < _rows; i++)
+        {
+            newBoard[i] = new int[_cols];
+            for (int j = 0; j < _cols; j++)
+            {
+                newBoard[i][j] = rand.NextDouble() > 0.6 ? 1 : 0;
+            }
+        }
+        return newBoard;
+    }
+
+    void SetBoardSize(int newRows, int newCols)
+    {
+        _rows = newRows;
+        _cols = newCols;
+        _board = CreateBoard();
+    }
+
+    private int CountNeighbors(int[][] board, int row, int col)
+    {
+        int count = 0;
+        for (int i = -1; i <= 1; i++)
+        {
+            for (int j = -1; j <= 1; j++)
+            {
+                int newRow = row + i;
+                int newCol = col + j;
+                if (newRow >= 0 && newRow < _rows && newCol >= 0 && newCol < _cols)
+                {
+                    count += board[newRow][newCol];
+                }
+            }
+        }
+        count -= board[row][col];
+        return count;
+    }
+
+    private int[][] GetNextGeneration(int[][] board)
+    {
+        var newBoard = new int[_rows][];
+        for (int i = 0; i < _rows; i++)
+        {
+            newBoard[i] = new int[_cols];
+            for (int j = 0; j < _cols; j++)
+            {
+                int neighbors = CountNeighbors(board, i, j);
+                if (board[i][j] == 1)
+                {
+                    newBoard[i][j] = neighbors == 2 || neighbors == 3 ? 1 : 0;
+                }
+                else
+                {
+                    newBoard[i][j] = neighbors == 3 ? 1 : 0;
+                }
+            }
+        }
+        return newBoard;
+    }
+}
+
+<PageTitle>Game of life</PageTitle>
+<div class="center">
+   <h1>Game of life</h1>
+   <p>Iterations @(_currentCount)</p> 
+</div>
+<table class="table">
+    @foreach (var row in _board)
+    {
+        <tr>
+            @foreach (var cell in row)
+            {
+                <td class="cell @(cell == 1 ? "alive" : "dead")"></td>
+            }
+        </tr>
+    }
+</table>
+
