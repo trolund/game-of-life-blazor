@@ -8,10 +8,13 @@
     private int _currentCount = 0;
     private Timer _timer = new(10);
     private Double _randomFactor = 0.5;
+    private FPSCounter _fPSCounter;
 
     protected override void OnInitialized()
     {
         Reset();
+        _fPSCounter = new FPSCounter();
+        _fPSCounter.Start();
         _timer.Elapsed += (sender, eventArgs) => OnTimerCallback();
     }
 
@@ -31,6 +34,7 @@
         _ = InvokeAsync(() =>
         {
             _currentCount++;
+            _fPSCounter.Update();
             _board = GetNextGeneration(_board);
             StateHasChanged();
         });
@@ -71,13 +75,11 @@
     private int[][] CreateBoard()
     {
         var newBoard = new int[_rows][];
-        var rand = new Random();
         for (int i = 0; i < _rows; i++)
         {
             newBoard[i] = new int[_cols];
             for (int j = 0; j < _cols; j++)
             {
-                // newBoard[i][j] = rand.NextDouble() > 0.6 ? 1 : 0;
                 newBoard[i][j] = 0;
             }
         }
@@ -87,40 +89,45 @@
     private int CountNeighbors(int[][] board, int row, int col)
     {
         int count = 0;
-        for (int i = -1; i <= 1; i++)
+        int rowStart = Math.Max(0, row - 1);
+        int rowEnd = Math.Min(_rows - 1, row + 1);
+        int colStart = Math.Max(0, col - 1);
+        int colEnd = Math.Min(_cols - 1, col + 1);
+
+        for (int i = rowStart; i <= rowEnd; i++)
         {
-            for (int j = -1; j <= 1; j++)
+            for (int j = colStart; j <= colEnd; j++)
             {
-                int newRow = row + i;
-                int newCol = col + j;
-                if (newRow >= 0 && newRow < _rows && newCol >= 0 && newCol < _cols)
+                if (i != row || j != col)
                 {
-                    count += board[newRow][newCol];
+                    count += board[i][j];
                 }
             }
         }
-        count -= board[row][col];
+
         return count;
     }
 
     private int[][] GetNextGeneration(int[][] board)
     {
         var newBoard = new int[_rows][];
+
         for (int i = 0; i < _rows; i++)
         {
-            newBoard[i] = new int[_cols];
+            var newRow = new int[_cols];
             for (int j = 0; j < _cols; j++)
             {
                 int neighbors = CountNeighbors(board, i, j);
                 if (board[i][j] == 1)
                 {
-                    newBoard[i][j] = neighbors == 2 || neighbors == 3 ? 1 : 0;
+                    newRow[j] = neighbors == 2 || neighbors == 3 ? 1 : 0;
                 }
                 else
                 {
-                    newBoard[i][j] = neighbors == 3 ? 1 : 0;
+                    newRow[j] = neighbors == 3 ? 1 : 0;
                 }
             }
+            newBoard[i] = newRow;
         }
         return newBoard;
     }
@@ -130,6 +137,7 @@
 <div class="center">
    <h1>Game of life</h1>
    <p>Iterations @(_currentCount)</p> 
+   <p>FPS @(_fPSCounter.CurrentFPS.ToString("F2"))</p> 
    <button @onclick="Start">@(_timer.Enabled ? "Stop" : "Start")</button>
    <input name="random_factor" value="@(_randomFactor)" @onchange="(v) => { _randomFactor = double.Parse((string) v.Value); }"/>
    <button @onclick="RandomBoard">Random world</button>
