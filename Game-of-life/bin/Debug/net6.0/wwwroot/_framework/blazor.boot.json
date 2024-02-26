@@ -1,7 +1,7 @@
 {
   "entryAssembly": "Game-of-life",
   "resources": {
-    "hash": "sha256-vZcSOXt09BXSOCFJjXU7KyQK37iZXJPdrOTSDrT6rbs=",
+    "hash": "sha256-kkQhWSfFW48K1Cl4m9RqBOF0nwsaMPzrVmCOVIjSX48=",
     "runtime": {
       "dotnet.6.0.26.jj33ar4cw0.js": "sha256-q4SPzhRyXlR1HXK6WAbwJRNI6jvBBYUisoHeH0+eRyM=",
       "dotnet.timezones.blat": "sha256-klrDSl9zL0jGM+Fc+fiCLbJ5Z7U2C9fTDn0+NmIH9VY=",
@@ -200,10 +200,10 @@
       "mscorlib.dll": "sha256-s5oSn2ty4Q1q2t/0DWCHXo4ll77GsoYrYe5ExHyAg0o=",
       "netstandard.dll": "sha256-AH9oqzxpl6lGTr9vEnTGTk40WK7IpSuGlKS3dTEC67I=",
       "System.Private.CoreLib.dll": "sha256-ae6NSkrFVtQY8QH8C38+ZYQDBUinD+PjmAf/eE/eVMQ=",
-      "Game-of-life.dll": "sha256-7Hxg2J4gcU2OpK49MEKkMemwLa9ik45f+3QOSq9ZLs8="
+      "Game-of-life.dll": "sha256-BwDvjpEcGcYaQ8kAvzxu2Q68wO/coA6k9253G9+LLvQ="
     },
     "pdb": {
-      "Game-of-life.pdb": "sha256-OV5Sbin0+fdxbnWOjZPW0hI8iUqGD+x37P48SPuoevI="
+      "Game-of-life.pdb": "sha256-abiEWWZj950Wqb6R8/ywQLyF8qC7C7Qk8fJjiw3SOf4="
     },
     "runtimeAssets": {
       "dotnet.wasm": {

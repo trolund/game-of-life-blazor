@@ -814,3 +814,4 @@
 /Users/troelslund/RiderProjects/Game-of-life/Game-of-life/obj/Debug/net6.0/refint/Game-of-life.dll
 /Users/troelslund/RiderProjects/Game-of-life/Game-of-life/obj/Debug/net6.0/Game-of-life.pdb
 /Users/troelslund/RiderProjects/Game-of-life/Game-of-life/obj/Debug/net6.0/ref/Game-of-life.dll
+/Users/troelslund/RiderProjects/Game-of-life/Game-of-life/obj/Debug/net6.0/Game-of-life.sourcelink.json
