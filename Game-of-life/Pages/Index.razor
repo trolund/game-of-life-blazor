@@ -6,7 +6,7 @@
     private int _cols = 160;
     private int[][] _board;
     private int _currentCount = 0;
-    private Timer _timer = new(10);
+    private Timer _timer = new(100); // no limite
     private Double _randomFactor = 0.5;
     private FPSCounter _fPSCounter;
 
@@ -137,11 +137,16 @@
 <div class="center">
    <h1>Game of life</h1>
    <p>Iterations @(_currentCount)</p> 
-   <p>FPS @(_fPSCounter.CurrentFPS.ToString("F2"))</p> 
-   <button @onclick="Start">@(_timer.Enabled ? "Stop" : "Start")</button>
+   <p>FPS @(_fPSCounter.CurrentFPS.ToString("F2")) (capped at 10 fps)</p> 
+   <button @onclick="Start">@(_timer.Enabled ? "Stop" : "Start")</button><button @onclick="Reset">Reset</button>
+   <div>
+       <h2>World size</h2>
+       <label>width:</label><input value="@(_cols)" @onchange="(v) => { _cols = int.Parse((string) v.Value); StateHasChanged();}"/>
+       <label>height:</label><input value="@(_rows)" @onchange="(v) => { _rows = int.Parse((string) v.Value); StateHasChanged();}"/>
+   </div>
+   <h2>Random world generation:</h2>
    <input name="random_factor" value="@(_randomFactor)" @onchange="(v) => { _randomFactor = double.Parse((string) v.Value); }"/>
-   <button @onclick="RandomBoard">Random world</button>
-   <button @onclick="Reset">Reset</button>
+   <button @onclick="RandomBoard">Generate random world</button>
 </div>
 <table class="table">
     @foreach (var row in _board.Select((x,i) => new {Value = x, Index = i}))
