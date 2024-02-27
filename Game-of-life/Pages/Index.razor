@@ -1,5 +1,6 @@
 ﻿@page "/"
 @using System.Timers
+@using System.Threading.Tasks;
 
 @code {
     private int _rows = 45;
@@ -107,7 +108,7 @@
 
         return count;
     }
-
+    
     private int[][] GetNextGeneration(int[][] board)
     {
         var newBoard = new int[_rows][];
@@ -129,6 +130,31 @@
             }
             newBoard[i] = newRow;
         }
+        return newBoard;
+    }
+
+    private int[][] GetNextGenerationPara(int[][] board)
+    {
+        var newBoard = new int[_rows][];
+
+        Parallel.For(0, _rows, i =>
+        {
+            var newRow = new int[_cols];
+            for (int j = 0; j < _cols; j++)
+            {
+                int neighbors = CountNeighbors(board, i, j);
+                if (board[i][j] == 1)
+                {
+                    newRow[j] = neighbors == 2 || neighbors == 3 ? 1 : 0;
+                }
+                else
+                {
+                    newRow[j] = neighbors == 3 ? 1 : 0;
+                }
+            }
+            newBoard[i] = newRow;
+        });
+
         return newBoard;
     }
 }
