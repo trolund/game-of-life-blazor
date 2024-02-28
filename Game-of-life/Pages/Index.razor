@@ -132,7 +132,7 @@
         }
         return newBoard;
     }
-
+    
     private int[][] GetNextGenerationPara(int[][] board)
     {
         var newBoard = new int[_rows][];
@@ -141,6 +141,7 @@
         {
             var newRow = new int[_cols];
             for (int j = 0; j < _cols; j++)
+            // Parallel.For(0, _cols, j =>
             {
                 int neighbors = CountNeighbors(board, i, j);
                 if (board[i][j] == 1)
