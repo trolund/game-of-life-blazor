@@ -1,4 +1,4 @@
-## Game of life imlemented in Blazor
+## Game of life implemented in Blazor
 
 * Adjustable world size
 * Random population of cells
