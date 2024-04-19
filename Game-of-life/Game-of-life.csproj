@@ -8,7 +8,7 @@
 
     <PropertyGroup>
         <GHPages>true</GHPages>
-        <GHPagesBase>/Simple-Genetic-algorithm/</GHPagesBase>
+        <GHPagesBase>/Game-of-life-blazor/</GHPagesBase>
     </PropertyGroup>
 
     <PropertyGroup Condition=" '$(RunConfiguration)' == 'Game_of_life' ">
