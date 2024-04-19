@@ -6,3 +6,5 @@
 * Customize the world by clicking on cells.
 
 ![alt text](screen-1.png)
+
+[Go to demo](https://trolund.github.io/Game-of-life-blazor/)
