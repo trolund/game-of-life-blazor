@@ -6,9 +6,18 @@
         <ImplicitUsings>enable</ImplicitUsings>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <GHPages>true</GHPages>
+        <GHPagesBase>/Simple-Genetic-algorithm/</GHPagesBase>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(RunConfiguration)' == 'Game_of_life' ">
+      <ExternalConsole>true</ExternalConsole>
+    </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.16"/>
-        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.16" PrivateAssets="all"/>
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="6.0.16" />
+        <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="6.0.16" PrivateAssets="all" />
+        <PackageReference Include="PublishSPAforGitHubPages.Build" Version="2.2.0" />
     </ItemGroup>
 
 </Project>

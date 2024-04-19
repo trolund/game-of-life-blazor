@@ -403,11 +403,29 @@
           }
         }
       },
+      "Microsoft.NET.ILLink.Analyzers/7.0.100-1.23211.1": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Analyzers.props": {}
+        }
+      },
+      "Microsoft.NET.ILLink.Tasks/7.0.100-1.23211.1": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
       "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.1": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
+        }
+      },
+      "PublishSPAforGitHubPages.Build/2.2.0": {
+        "type": "package",
+        "build": {
+          "build/PublishSPAforGitHubPages.Build.targets": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
@@ -909,11 +927,29 @@
           }
         }
       },
+      "Microsoft.NET.ILLink.Analyzers/7.0.100-1.23211.1": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Analyzers.props": {}
+        }
+      },
+      "Microsoft.NET.ILLink.Tasks/7.0.100-1.23211.1": {
+        "type": "package",
+        "build": {
+          "build/Microsoft.NET.ILLink.Tasks.props": {}
+        }
+      },
       "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.1": {
         "type": "package",
         "build": {
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.props": {},
           "build/Microsoft.NET.Sdk.WebAssembly.Pack.targets": {}
+        }
+      },
+      "PublishSPAforGitHubPages.Build/2.2.0": {
+        "type": "package",
+        "build": {
+          "build/PublishSPAforGitHubPages.Build.targets": {}
         }
       },
       "System.Diagnostics.DiagnosticSource/6.0.0": {
@@ -1612,6 +1648,53 @@
         "microsoft.jsinterop.webassembly.nuspec"
       ]
     },
+    "Microsoft.NET.ILLink.Analyzers/7.0.100-1.23211.1": {
+      "sha512": "0GvbEgDGcUQA9KuWcQU1WwYHXt1tBzNr1Nls/M57rM7NA/AndFwCaCEoJpJkmxRY7xLlPDBnmGp8h5+FNqUngg==",
+      "type": "package",
+      "path": "microsoft.net.illink.analyzers/7.0.100-1.23211.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
+        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
+        "build/Microsoft.NET.ILLink.Analyzers.props",
+        "microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+        "microsoft.net.illink.analyzers.nuspec"
+      ]
+    },
+    "Microsoft.NET.ILLink.Tasks/7.0.100-1.23211.1": {
+      "sha512": "tvG8XZYLjT0o3WicCyKBZysVWo1jC9HdCFmNRmddx3WbAz0UCsd0qKZqpiEo99VLA8Re+FzWK51OcRldQPbt2Q==",
+      "type": "package",
+      "path": "microsoft.net.illink.tasks/7.0.100-1.23211.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "Sdk/Sdk.props",
+        "build/6.0_suppressions.xml",
+        "build/Microsoft.NET.ILLink.Tasks.props",
+        "build/Microsoft.NET.ILLink.targets",
+        "microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
+        "microsoft.net.illink.tasks.nuspec",
+        "tools/net472/ILLink.Tasks.dll",
+        "tools/net472/Mono.Cecil.dll",
+        "tools/net472/System.Buffers.dll",
+        "tools/net472/System.Collections.Immutable.dll",
+        "tools/net472/System.Memory.dll",
+        "tools/net472/System.Numerics.Vectors.dll",
+        "tools/net472/System.Reflection.Metadata.dll",
+        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
+        "tools/net7.0/ILLink.Tasks.deps.json",
+        "tools/net7.0/ILLink.Tasks.dll",
+        "tools/net7.0/Mono.Cecil.Pdb.dll",
+        "tools/net7.0/Mono.Cecil.dll",
+        "tools/net7.0/illink.deps.json",
+        "tools/net7.0/illink.dll",
+        "tools/net7.0/illink.runtimeconfig.json"
+      ]
+    },
     "Microsoft.NET.Sdk.WebAssembly.Pack/8.0.1": {
       "sha512": "WE5sCiA6FbpmHBA7SeIApjBhBFfHQlWTqn5N5jCTncpSHFchjsc6hyXhPjS0PqIV8eiWayNmJpN+VmV1nHFVAw==",
       "type": "package",
@@ -1678,6 +1761,27 @@
         "tools/net8.0/System.Security.Cryptography.ProtectedData.dll",
         "tools/net8.0/System.Security.Permissions.dll",
         "tools/net8.0/System.Windows.Extensions.dll"
+      ]
+    },
+    "PublishSPAforGitHubPages.Build/2.2.0": {
+      "sha512": "Nb9vCdVsZh/u1OeU2dPw/rD9mxWZYGCSrk8b3S3Y1qtXXzj4HY2W3kl4oE0XlJVgXKhbFR6RhzMBKD0ozFKk2w==",
+      "type": "package",
+      "path": "publishspaforgithubpages.build/2.2.0",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "build/PublishSPAforGitHubPages.Build.targets",
+        "bundle/scripts/brotliloader.js",
+        "bundle/scripts/brotliloader.min.js",
+        "bundle/scripts/decode.js",
+        "bundle/scripts/decode.min.js",
+        "nupkg-icon.png",
+        "publishspaforgithubpages.build.2.2.0.nupkg.sha512",
+        "publishspaforgithubpages.build.nuspec",
+        "tools/BrotliSharpLib.dll",
+        "tools/PublishSPAforGitHubPages.Build.dll"
       ]
     },
     "System.Diagnostics.DiagnosticSource/6.0.0": {
@@ -1841,7 +1945,10 @@
     "net6.0": [
       "Microsoft.AspNetCore.Components.WebAssembly >= 6.0.16",
       "Microsoft.AspNetCore.Components.WebAssembly.DevServer >= 6.0.16",
-      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.1"
+      "Microsoft.NET.ILLink.Analyzers >= 7.0.100-1.23211.1",
+      "Microsoft.NET.ILLink.Tasks >= 7.0.100-1.23211.1",
+      "Microsoft.NET.Sdk.WebAssembly.Pack >= 8.0.1",
+      "PublishSPAforGitHubPages.Build >= 2.2.0"
     ]
   },
   "packageFolders": {
@@ -1890,11 +1997,27 @@
             "target": "Package",
             "version": "[6.0.16, )"
           },
+          "Microsoft.NET.ILLink.Analyzers": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[7.0.100-1.23211.1, )",
+            "autoReferenced": true
+          },
+          "Microsoft.NET.ILLink.Tasks": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[7.0.100-1.23211.1, )",
+            "autoReferenced": true
+          },
           "Microsoft.NET.Sdk.WebAssembly.Pack": {
             "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.1, )",
             "autoReferenced": true
+          },
+          "PublishSPAforGitHubPages.Build": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           }
         },
         "imports": [

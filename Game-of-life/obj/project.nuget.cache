@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "GkIRvRbgbnWS9CRw/HRNHMUE+PtPiKD3zIVx7SuE7QGUnbBBhajf8IEZmi+IkT3OLhe1cBTUI2+1THlKEUKnCw==",
+  "dgSpecHash": "xBH5WPakvLGJg58rvS7Y+EK8ztt5wSbDmwFxHzksYjUHfTg1eL7NQiDgDOBIUhTLa1MmwM7txy97DgO0dyUo2g==",
   "success": true,
   "projectFilePath": "/Users/troelslund/RiderProjects/Game-of-life/Game-of-life/Game-of-life.csproj",
   "expectedPackageFiles": [
@@ -28,7 +28,10 @@
     "/Users/troelslund/.nuget/packages/microsoft.extensions.primitives/6.0.0/microsoft.extensions.primitives.6.0.0.nupkg.sha512",
     "/Users/troelslund/.nuget/packages/microsoft.jsinterop/6.0.16/microsoft.jsinterop.6.0.16.nupkg.sha512",
     "/Users/troelslund/.nuget/packages/microsoft.jsinterop.webassembly/6.0.16/microsoft.jsinterop.webassembly.6.0.16.nupkg.sha512",
+    "/Users/troelslund/.nuget/packages/microsoft.net.illink.analyzers/7.0.100-1.23211.1/microsoft.net.illink.analyzers.7.0.100-1.23211.1.nupkg.sha512",
+    "/Users/troelslund/.nuget/packages/microsoft.net.illink.tasks/7.0.100-1.23211.1/microsoft.net.illink.tasks.7.0.100-1.23211.1.nupkg.sha512",
     "/Users/troelslund/.nuget/packages/microsoft.net.sdk.webassembly.pack/8.0.1/microsoft.net.sdk.webassembly.pack.8.0.1.nupkg.sha512",
+    "/Users/troelslund/.nuget/packages/publishspaforgithubpages.build/2.2.0/publishspaforgithubpages.build.2.2.0.nupkg.sha512",
     "/Users/troelslund/.nuget/packages/system.diagnostics.diagnosticsource/6.0.0/system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "/Users/troelslund/.nuget/packages/system.io.pipelines/6.0.3/system.io.pipelines.6.0.3.nupkg.sha512",
     "/Users/troelslund/.nuget/packages/system.runtime.compilerservices.unsafe/6.0.0/system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
