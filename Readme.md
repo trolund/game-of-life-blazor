@@ -1,5 +1,7 @@
 ## Game of life implemented in Blazor
 
+Conways Game Of Life implemented in Blazor. 
+
 * Adjustable world size
 * Random population of cells
 * Start and stop functionality
