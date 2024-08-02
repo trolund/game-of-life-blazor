@@ -1,7 +1,7 @@
 {
   "entryAssembly": "Game-of-life",
   "resources": {
-    "hash": "sha256-J5OHfF7QrJFlkYuexwWWVCObXaYFUiiLkyOREJm2ooA=",
+    "hash": "sha256-blCM1ZNX0daVSGmSPmlnbZpeVk5vpvi9/AELGIeB7dk=",
     "runtime": {
       "dotnet.6.0.32.cwpnov5ouh.js": "sha256-6fa9WVfvYrd56Fl6GQXGO40czbLt6gcYgnZxXB+Sn5A=",
       "dotnet.timezones.blat": "sha256-ALK3ufXwNaP1t4mRlACcINalB2grQvfkrI/8lo7nNq0=",
@@ -11,7 +11,7 @@
       "icudt_no_CJK.dat": "sha256-OxylFgLJlFqixsj+nLxYVsv5iZLvfIKMpLf9hrWaChA="
     },
     "assembly": {
-      "Game-of-life.dll": "sha256-n81WIGDe+iUL2roulEitQcm09DGMM0tzYcG+GokC/3Q=",
+      "Game-of-life.dll": "sha256-Om8TM5ZNv5jTrAn1UP37KI69ShYDC1WuuFq8YUS33P8=",
       "Microsoft.AspNetCore.Components.dll": "sha256-sgGSV6UwyI0v7SEbfiHfyZ46BW739S4NLgfct81rKcs=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-e+PxOFoD7UPoVi+7BOsm8w3HbDyWrYCKO9u8cCXXUcs=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-NuGQqXQYe0MbwbsD8no4/j+9Zj4gi263vsybDw9YkCI=",
