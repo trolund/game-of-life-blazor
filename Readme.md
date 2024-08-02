@@ -1,4 +1,4 @@
-## Game of life implemented in Blazor
+## Game of Life implemented in Blazor
 
 Conways Game Of Life implemented in Blazor. 
 
